@@ -1,0 +1,29 @@
+<!-- nav -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index">BookShop</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a routerLink="books" class="nav-link active" (click)="switch(false)">Books</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="add" class="nav-link" (click)="switch(true)">Add</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<body>
+  <div class="container text-center" *ngIf="!isSwiched">
+    <app-book-list [list]="books"></app-book-list>
+  </div>
+  <div class="container text-center" *ngIf="isSwiched">
+    <app-add-book></app-add-book>
+  </div>
+</body>

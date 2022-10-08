@@ -1,0 +1,39 @@
+<h4 id="headline" class="row">Books List</h4>
+<div class="spacer">
+    <div class="overlay" *ngIf="!load">
+        <div class="spinner ">
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" />
+        </div>
+    </div>
+    <div *ngIf="load">
+        Datos cargados correctamente
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <ul class="list-group">
+                <li class="list-group-item"
+                    *ngFor="let book of list | paginate: { itemsPerPage: 14, currentPage: page }; let i=index"
+                    [class.active]=" i == currentIndex" (click)="setActiveBook(book, i)">
+                    {{book.id}}&nbsp;{{book.title}}
+                </li>
+            </ul>
+            <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente">
+            </pagination-controls>
+        </div>
+        <div class="col-6">
+            <div *ngIf="currentBook.id">
+                <!-- directive *ngIf -->
+                <h4>Book</h4>
+                <div>
+                    <label><strong>Title:</strong></label> {{currentBook.title}}
+                </div>
+                <div>
+                    <label><strong>Description:</strong></label> {{currentBook.description}}
+                </div>
+                <div>
+                    <label><strong>Status:</strong></label> {{currentBook.status ? "Published" : "Pending"}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

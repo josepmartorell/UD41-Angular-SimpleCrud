@@ -1,0 +1,14 @@
+.spacer{
+    margin-left: 37px;
+    text-align: left;
+}
+
+#headline {
+    padding-left: 45px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .custom { 
+    width: 142px !important; 
+}
+

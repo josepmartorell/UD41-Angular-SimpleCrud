@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   listBooks() {
-    this.http.get<Book[]>('http://localhost:3000/books').subscribe(res => this.books = res);
+    this.http.get<Book[]>('https://faker-papi.herokuapp.com/books').subscribe(res => this.books = res);
   }
 
   switch(state: boolean){

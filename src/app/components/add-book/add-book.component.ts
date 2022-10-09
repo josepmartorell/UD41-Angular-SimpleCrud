@@ -15,7 +15,7 @@ export class AddBookComponent implements OnInit {
     published: false
   }
   submitted = false
-  apiUrl: string = 'http://localhost:3000/books'
+  apiUrl: string = 'https://faker-papi.herokuapp.com/books'
 
   constructor(private http: HttpClient) { }
 
